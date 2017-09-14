@@ -132,8 +132,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             switch (wmId)
             {
             case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+                //DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+				MessageBox(hWnd, _T("haha"), _T("Test!"), MB_OK);
                 break;
+			case WM_LBUTTONDOWN:
+				MessageBox(hWnd, _T("haha"), _T("Test2!"), MB_OK);
+				break;
             case IDM_EXIT:
                 DestroyWindow(hWnd);
                 break;
