@@ -151,6 +151,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다.
+			RECT rect;
+			GetClientRect(hWnd, &rect);
+			DrawText(hdc, _T("hello world"), -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
             EndPaint(hWnd, &ps);
         }
         break;
