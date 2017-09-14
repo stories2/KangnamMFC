@@ -135,9 +135,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 //DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
 				MessageBox(hWnd, _T("haha"), _T("Test!"), MB_OK);
                 break;
-			case WM_LBUTTONDOWN:
-				MessageBox(hWnd, _T("haha"), _T("Test2!"), MB_OK);
-				break;
             case IDM_EXIT:
                 DestroyWindow(hWnd);
                 break;
@@ -146,6 +143,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
         }
         break;
+	case WM_LBUTTONDOWN:
+		MessageBox(hWnd, _T("haha"), _T("Test2!"), MB_OK);
+		break;
     case WM_PAINT:
         {
             PAINTSTRUCT ps;
