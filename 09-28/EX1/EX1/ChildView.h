@@ -5,7 +5,7 @@
 
 #pragma once
 
-
+#pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
 // CChildView â
 
 class CChildView : public CWnd
