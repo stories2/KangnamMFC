@@ -25,6 +25,7 @@ CChildView::~CChildView()
 BEGIN_MESSAGE_MAP(CChildView, CWnd)
 	ON_WM_PAINT()
 	ON_WM_LBUTTONDOWN()
+	ON_WM_SIZE()
 END_MESSAGE_MAP()
 
 
@@ -78,6 +79,21 @@ void CChildView::OnPaint()
 	sprintf(buffer, "Right: %d", rect.right);
 
 	dc.TextOut(centerX, centerY + 20, buffer);
+
+
+	//
+	//dc.MoveTo(x1, y1);
+	//dc.LineTo(x1, y1);
+	t = 0;
+	int gap = 20;
+	for (i = 0; i < rect.bottom; i += gap) {
+		t += gap;
+		dc.MoveTo(t, 0);
+		dc.LineTo(rect.right, i);
+
+		dc.MoveTo(0, i);
+		dc.LineTo(t, rect.bottom);
+	}
 }
 
 
@@ -93,4 +109,19 @@ void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 	dc.Ellipse(point.x - radius, point.y - radius, point.x + radius, point.y + radius);
 
 	CWnd::OnLButtonDown(nFlags, point);
+}
+
+
+void CChildView::OnSize(UINT nType, int cx, int cy)
+{
+	CWnd::OnSize(nType, cx, cy);
+
+	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
+
+	CClientDC dc(this);
+
+	CRect rect;
+	GetClientRect(rect);
+
+	dc.Ellipse(rect.left, rect.top, rect.right, rect.bottom);
 }
