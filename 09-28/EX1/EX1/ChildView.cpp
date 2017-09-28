@@ -95,6 +95,13 @@ void CChildView::OnPaint()
 		dc.LineTo(t, rect.bottom);
 	}
 
+	dc.SetTextColor(RGB(255, 0, 0));
+	dc.SetBkColor(RGB(255, 255, 0));
+
+	dc.DrawText("Draw Text Test", &rect, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+
+	dc.SetTextAlign(TA_CENTER);
+	dc.TextOut(rect.Width() / 2, rect.Height() / 4, "Welcome");
 
 }
 
