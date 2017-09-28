@@ -62,6 +62,22 @@ void CChildView::OnPaint()
 			dc.SetPixel(t, i, RGB(t, i, 255));
 		}
 	}
+
+	CRect rect;
+	GetClientRect(rect);
+
+	int centerX = rect.right / 2,
+		centerY = rect.bottom / 2;
+	
+	char buffer[100];//멀티바이트 문자 집합으로 바꾸기
+	sprintf(buffer, "Left: %d", rect.left);
+
+
+	dc.TextOut(centerX, centerY, buffer);
+
+	sprintf(buffer, "Right: %d", rect.right);
+
+	dc.TextOut(centerX, centerY + 20, buffer);
 }
 
 
