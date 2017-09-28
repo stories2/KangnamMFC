@@ -51,6 +51,17 @@ void CChildView::OnPaint()
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 	
 	// 그리기 메시지에 대해서는 CWnd::OnPaint()를 호출하지 마십시오.
+
+	int r, g, b;
+
+	//COLORREF color = dc.GetPixel(x, y);
+	//dc.SetPixel(x, y, RGB(r, g, b));
+	int i, t;
+	for (i = 0; i < 255; i += 1) {
+		for (t = 0; t < 255; t += 1) {
+			dc.SetPixel(t, i, RGB(t, i, 255));
+		}
+	}
 }
 
 
