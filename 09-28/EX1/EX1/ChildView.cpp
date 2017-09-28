@@ -24,6 +24,7 @@ CChildView::~CChildView()
 
 BEGIN_MESSAGE_MAP(CChildView, CWnd)
 	ON_WM_PAINT()
+	ON_WM_LBUTTONDOWN()
 END_MESSAGE_MAP()
 
 
@@ -52,3 +53,17 @@ void CChildView::OnPaint()
 	// 그리기 메시지에 대해서는 CWnd::OnPaint()를 호출하지 마십시오.
 }
 
+
+
+void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+
+	CClientDC dc(this);
+
+	int radius = 30;
+
+	dc.Ellipse(point.x - radius, point.y - radius, point.x + radius, point.y + radius);
+
+	CWnd::OnLButtonDown(nFlags, point);
+}
