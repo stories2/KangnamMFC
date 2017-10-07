@@ -14,5 +14,5 @@ Circle::Circle(float x, float y, float r):Shape(x, y){
 }
 
 void Circle::Draw() {
-	cout << "[Circle] position (" << this->x << ", " << this->y << ", radius = " << radius << ")" << endl;
+	cout << "[Circle] position = (" << this->x << ", " << this->y << ", radius = " << radius << ")" << endl;
 }
