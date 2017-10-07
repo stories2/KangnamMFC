@@ -7,7 +7,7 @@ protected:
 	float x, y;
 public:
 	Shape(float ix, float iy);
-	void Draw();
+	virtual void Draw();
 };
 
 Shape::Shape(float ix, float iy) {
