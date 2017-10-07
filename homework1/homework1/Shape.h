@@ -3,6 +3,7 @@
 using namespace std;
 
 class Shape {
+protected:
 	float x, y;
 public:
 	Shape(float ix, float iy);
