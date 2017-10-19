@@ -33,6 +33,12 @@
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Shape2D.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Line2D.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EX2.cpp">
@@ -45,6 +51,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="ChildView.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape2D.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Line2D.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
