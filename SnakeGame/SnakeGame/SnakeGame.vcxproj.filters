@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Model">
+      <UniqueIdentifier>{a36e525f-4318-4079-94b1-dcc2fdc230aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -36,6 +39,9 @@
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SnakeGame.cpp">
@@ -49,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="ChildView.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +80,6 @@
     <Image Include="res\bitmap1.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="D:\project\tohougrapic\동방 캐릭터칩\플랑도르.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
     <Image Include="res\bitmap2.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
@@ -84,6 +90,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\..\..\..\..\Desktop\player.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\item.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

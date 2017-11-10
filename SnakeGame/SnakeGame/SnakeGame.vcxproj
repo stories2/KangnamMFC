@@ -183,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChildView.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SnakeGame.h" />
@@ -191,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChildView.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="SnakeGame.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -208,10 +210,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Desktop\player.png" />
-    <Image Include="D:\project\tohougrapic\동방 캐릭터칩\플랑도르.png" />
     <Image Include="res\bitmap1.bmp" />
     <Image Include="res\bitmap2.bmp" />
     <Image Include="res\bitmap3.bmp" />
+    <Image Include="res\item.png" />
     <Image Include="res\player.png" />
     <Image Include="res\SnakeGame.ico" />
     <Image Include="res\Toolbar.bmp" />
