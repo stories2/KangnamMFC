@@ -183,8 +183,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChildView.h" />
+    <ClInclude Include="DefineManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SnakeGame.h" />
     <ClInclude Include="stdafx.h" />
@@ -194,6 +196,7 @@
     <ClCompile Include="ChildView.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Position.cpp" />
     <ClCompile Include="SnakeGame.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

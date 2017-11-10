@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "SnakeGame.h"
 #include "ChildView.h"
+#include "DefineManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

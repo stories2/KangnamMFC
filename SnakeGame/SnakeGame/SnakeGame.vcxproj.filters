@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\Model">
       <UniqueIdentifier>{a36e525f-4318-4079-94b1-dcc2fdc230aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Model">
+      <UniqueIdentifier>{6724ffda-f391-40fd-b155-63988308c24a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -39,7 +42,13 @@
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
     <ClInclude Include="GameObject.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -57,6 +66,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
       <Filter>소스 파일\Model</Filter>
     </ClCompile>
   </ItemGroup>
