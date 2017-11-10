@@ -68,5 +68,23 @@
     <Image Include="res\Toolbar.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="D:\project\tohougrapic\동방 캐릭터칩\플랑도르.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\bitmap3.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\player.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Desktop\player.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

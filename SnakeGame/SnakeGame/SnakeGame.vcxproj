@@ -207,6 +207,12 @@
     <None Include="res\SnakeGame.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\Desktop\player.png" />
+    <Image Include="D:\project\tohougrapic\동방 캐릭터칩\플랑도르.png" />
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\bitmap2.bmp" />
+    <Image Include="res\bitmap3.bmp" />
+    <Image Include="res\player.png" />
     <Image Include="res\SnakeGame.ico" />
     <Image Include="res\Toolbar.bmp" />
   </ItemGroup>
