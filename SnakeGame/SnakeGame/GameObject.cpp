@@ -54,8 +54,13 @@ CImage GameObject::GetImage()
 	return objectImage;
 }
 
+void GameObject::Draw()
+{
+}
+
 
 GameObject::~GameObject()
 {
 	delete this->nextGameObject;
+	objectImage.Destroy();
 }

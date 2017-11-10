@@ -186,7 +186,7 @@
     <ClInclude Include="DefineManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="MainFrm.h" />
-    <ClInclude Include="PlayerObect.h" />
+    <ClInclude Include="PlayerObject.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SnakeGame.h" />
@@ -197,7 +197,7 @@
     <ClCompile Include="ChildView.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="MainFrm.cpp" />
-    <ClCompile Include="PlayerObect.cpp" />
+    <ClCompile Include="PlayerObject.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="SnakeGame.cpp" />
     <ClCompile Include="stdafx.cpp">

@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "SnakeGame.h"
 #include "ChildView.h"
-#include "DefineManager.h"
+#include "PlayerObject.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -50,6 +50,9 @@ void CChildView::OnPaint()
 	
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 	
-	// 그리기 메시지에 대해서는 CWnd::OnPaint()를 호출하지 마십시오.
+	// 그리기 메시지에 대해서는 CWnd::OnPaint()를 호출하지 마십시오
+	Position defaultPosition;
+	CString filePath("res/player.png");
+	PlayerObject playerObject(defaultPosition, filePath, DIRECTION_UP);
 }
 

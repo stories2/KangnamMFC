@@ -57,7 +57,7 @@
     <ClInclude Include="DefineManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerObect.h">
+    <ClInclude Include="PlayerObject.h">
       <Filter>헤더 파일\Controller</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,7 +80,7 @@
     <ClCompile Include="Position.cpp">
       <Filter>소스 파일\Model</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerObect.cpp">
+    <ClCompile Include="PlayerObject.cpp">
       <Filter>소스 파일\Controller</Filter>
     </ClCompile>
   </ItemGroup>

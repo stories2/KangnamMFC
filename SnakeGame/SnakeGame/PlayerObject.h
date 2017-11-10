@@ -1,12 +1,15 @@
 #pragma once
 
 #include "GameObject.h"
+#include <cstring>
 
-class PlayerObect : public GameObject
+using namespace std;
+
+class PlayerObject : public GameObject
 {
 
 public:
-	PlayerObect(Position playerPosition, CImage playerImage, int direction);
+	PlayerObject(Position playerPosition, CString filePath, int direction);
 	void SetPosition(Position position);
 	Position GetPosition();
 	void SetPlayerImage(CImage playerImage);
@@ -19,6 +22,6 @@ public:
 	void SetAnimeFrame(int animeFrame);
 	int GetAnimeFrame();
 	void Draw();
-	~PlayerObect();
+	~PlayerObject();
 };
 

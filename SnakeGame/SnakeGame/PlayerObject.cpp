@@ -1,56 +1,58 @@
 #include "stdafx.h"
-#include "PlayerObect.h"
+#include "PlayerObject.h"
 
 
-PlayerObect::PlayerObect(Position playerPosition, CImage playerImage, int direction)
+PlayerObject::PlayerObject(Position playerPosition, CString resourcePath, int direction)
 {
 	Position::SetPosition(playerPosition);
+	CImage playerImage;
+	playerImage.Load(resourcePath);
 	GameObject::SetImage(playerImage);
 	GameObject::SetDirection(direction);
 	GameObject::SetAnimeFrame(ZERO);
 }
 
-void PlayerObect::SetPosition(Position position)
+void PlayerObject::SetPosition(Position position)
 {
 	Position::SetPosition(position);
 }
 
-Position PlayerObect::GetPosition()
+Position PlayerObject::GetPosition()
 {
 	return Position::GetPosition();
 }
 
-void PlayerObect::SetPlayerImage(CImage playerImage)
+void PlayerObject::SetPlayerImage(CImage playerImage)
 {
 	GameObject::SetImage(playerImage);
 }
 
-CImage PlayerObect::GetPlayerImage()
+CImage PlayerObject::GetPlayerImage()
 {
 	return GameObject::GetImage();
 }
 
-void PlayerObect::SetDirection(int direction)
+void PlayerObject::SetDirection(int direction)
 {
 	GameObject::SetDirection(direction);
 }
 
-int PlayerObect::GetDirection()
+int PlayerObject::GetDirection()
 {
 	return GameObject::GetDirection();
 }
 
-void PlayerObect::SetNextGameObject(GameObject * nextGameObject)
+void PlayerObject::SetNextGameObject(GameObject * nextGameObject)
 {
 	GameObject::SetNextGameObject(nextGameObject);
 }
 
-GameObject * PlayerObect::GetNextGameObject()
+GameObject * PlayerObject::GetNextGameObject()
 {
 	return GameObject::GetNextGameObject();
 }
 
-GameObject * PlayerObect::GetLastGameObject()
+GameObject * PlayerObject::GetLastGameObject()
 {
 	GameObject *indexOfGameObject = GameObject::GetNextGameObject();
 	while (indexOfGameObject != nullptr) {
@@ -62,20 +64,21 @@ GameObject * PlayerObect::GetLastGameObject()
 	return indexOfGameObject;
 }
 
-void PlayerObect::SetAnimeFrame(int animeFrame)
+void PlayerObject::SetAnimeFrame(int animeFrame)
 {
 	GameObject::SetAnimeFrame(animeFrame);
 }
 
-int PlayerObect::GetAnimeFrame()
+int PlayerObject::GetAnimeFrame()
 {
 	return GameObject::GetAnimeFrame();
 }
 
-void PlayerObect::Draw()
+void PlayerObject::Draw()
 {
+	GameObject::Draw();
 }
 
-PlayerObect::~PlayerObect()
+PlayerObject::~PlayerObject()
 {
 }

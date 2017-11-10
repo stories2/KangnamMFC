@@ -18,5 +18,6 @@ public:
 	int GetAnimeFrame();
 	void SetImage(CImage objectImage);
 	CImage GetImage();
+	void Draw();
 	~GameObject();
 };
