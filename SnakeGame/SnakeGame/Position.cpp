@@ -14,6 +14,12 @@ void Position::SetPosition(int x, int y)
 	this->y = y;
 }
 
+void Position::SetPosition(Position position)
+{
+	this->x = position.x;
+	this->y = position.y;
+}
+
 Position Position::GetPosition()
 {
 	return *this;

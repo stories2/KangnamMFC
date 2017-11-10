@@ -8,6 +8,7 @@ class Position
 public:
 	Position();
 	void SetPosition(int x, int y);
+	void SetPosition(Position position);
 	Position GetPosition();
 	~Position();
 };

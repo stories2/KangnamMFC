@@ -19,6 +19,12 @@
     <Filter Include="헤더 파일\Model">
       <UniqueIdentifier>{6724ffda-f391-40fd-b155-63988308c24a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Controller">
+      <UniqueIdentifier>{2439cadd-59ff-46e0-8d94-b4d0b6ef5dfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Controller">
+      <UniqueIdentifier>{3a902a9f-25ea-4e34-b773-f9cfb5148551}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -51,6 +57,9 @@
     <ClInclude Include="DefineManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerObect.h">
+      <Filter>헤더 파일\Controller</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SnakeGame.cpp">
@@ -70,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="Position.cpp">
       <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerObect.cpp">
+      <Filter>소스 파일\Controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

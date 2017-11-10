@@ -4,13 +4,19 @@
 
 class GameObject : public Position
 {
-	Position position;
 	GameObject *nextGameObject;
+	int direction, animeFrame;
+	CImage objectImage;
 public:
 	GameObject();
-	void SetPosition(Position position);
-	Position GetPosition();
 	void SetNextGameObject(GameObject *gameObject);
-	GameObject GetNextGameObject();
+	GameObject *GetNextGameObject();
+	void DeleteNextGameObject();
+	void SetDirection(int direction);
+	int GetDirection();
+	void SetAnimeFrame(int animeFrame);
+	int GetAnimeFrame();
+	void SetImage(CImage objectImage);
+	CImage GetImage();
 	~GameObject();
 };
