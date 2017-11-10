@@ -185,6 +185,7 @@
     <ClInclude Include="ChildView.h" />
     <ClInclude Include="DefineManager.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="LogManager.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="PlayerObject.h" />
     <ClInclude Include="Position.h" />
@@ -196,6 +197,7 @@
   <ItemGroup>
     <ClCompile Include="ChildView.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="LogManager.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="PlayerObject.cpp" />
     <ClCompile Include="Position.cpp" />

@@ -25,6 +25,15 @@
     <Filter Include="헤더 파일\Controller">
       <UniqueIdentifier>{3a902a9f-25ea-4e34-b773-f9cfb5148551}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Utils">
+      <UniqueIdentifier>{9066352b-e3d7-4a38-b6f1-1751222fbb96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Utils">
+      <UniqueIdentifier>{bcf67e48-d04a-4a67-ae87-667d16f87985}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Settings">
+      <UniqueIdentifier>{77a3d8ff-3d7c-45a2-8437-5b5ed17ba4d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -54,11 +63,14 @@
     <ClInclude Include="GameObject.h">
       <Filter>헤더 파일\Model</Filter>
     </ClInclude>
-    <ClInclude Include="DefineManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerObject.h">
       <Filter>헤더 파일\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="LogManager.h">
+      <Filter>헤더 파일\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineManager.h">
+      <Filter>헤더 파일\Settings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="PlayerObject.cpp">
       <Filter>소스 파일\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="LogManager.cpp">
+      <Filter>소스 파일\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "PlayerObject.h"
+#include "LogManager.h"
 
 
 PlayerObject::PlayerObject(Position playerPosition, CString resourcePath, int direction)
@@ -7,6 +8,9 @@ PlayerObject::PlayerObject(Position playerPosition, CString resourcePath, int di
 	Position::SetPosition(playerPosition);
 	CImage playerImage;
 	playerImage.Load(resourcePath);
+	if (playerImage == NULL) {
+		LogManager::PrintMessage(CString("PlayerObject"), CString("PlayerObject"), CString("the image is wrong"), LOG_LEVEL_WARN);
+	}
 	GameObject::SetImage(playerImage);
 	GameObject::SetDirection(direction);
 	GameObject::SetAnimeFrame(ZERO);

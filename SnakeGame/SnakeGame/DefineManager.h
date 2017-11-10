@@ -8,4 +8,10 @@
 #define DIRECTION_DOWN 2
 #define DIRECTION_LEFT 3
 
+#define LOG_LEVEL_VERBOSE 0
+#define LOG_LEVEL_INFO 1
+#define LOG_LEVEL_DEBUG 2
+#define LOG_LEVEL_WARN 3
+#define LOG_LEVEL_ERROR 4
+
 #endif // !DEFINE_MANAGER
