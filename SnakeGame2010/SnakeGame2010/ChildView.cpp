@@ -72,8 +72,9 @@ void CChildView::RecursiveDraw(CPaintDC &dc) {
 	memDC.SelectObject(&bitmapPlayer);
 	GameObject *indexOfGameObject = rootPlayerObject;
 	while(indexOfGameObject != NULL) {
-		int x = indexOfGameObject->GetX(), y = indexOfGameObject->GetY();
-		dc.BitBlt(x * 32, y * 32, 32, 32, &memDC, 0, 0, SRCCOPY);
+		int x = indexOfGameObject->GetX(), y = indexOfGameObject->GetY(), 
+			direction = indexOfGameObject->GetDirection(), animeFrame = indexOfGameObject->GetAnimeFrame();
+		dc.BitBlt(x * 32, y * 32, 32, 32, &memDC, animeFrame * 32, direction * 32, SRCCOPY);
 		indexOfGameObject = indexOfGameObject->GetNextGameObject();
 	}
 }

@@ -3,8 +3,8 @@
 
 #define ZERO 0
 
-#define DIRECTION_UP 2
-#define DIRECTION_RIGHT 3
+#define DIRECTION_UP 3
+#define DIRECTION_RIGHT 2
 #define DIRECTION_DOWN 0
 #define DIRECTION_LEFT 1
 
