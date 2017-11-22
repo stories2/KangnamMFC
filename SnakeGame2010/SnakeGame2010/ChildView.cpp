@@ -79,10 +79,10 @@ void CChildView::OnPaint()
 
 void CChildView::RecursiveDraw(CPaintDC &dc) {
 	memDC.SelectObject(&bitmapPlayer);
-	GameObject *indexOfGameObject = rootPlayerObject;
+	GameObject *indexOfGameObject = rootPlayerObject->GetLastGameObject();
 	GameObject *previousGameObject = NULL;
 	Position *backupPosition = NULL;
-	int cnt = 0;
+	int cnt = 0, backupDirection = DIRECTION_NOT_AVAILABLE;
 	while(indexOfGameObject != NULL) {
 		int x = indexOfGameObject->GetX(), y = indexOfGameObject->GetY(), 
 			direction = indexOfGameObject->GetDirection(), animeFrame = indexOfGameObject->GetAnimeFrame();
@@ -91,21 +91,31 @@ void CChildView::RecursiveDraw(CPaintDC &dc) {
 		if(timer % IMAGE_UPDATE_TIME == 0) {
 			indexOfGameObject->SetAnimeFrame((animeFrame + 1) % 4);
 		}
-		if(previousGameObject != NULL && movingTimer % PLAYER_MOVE_TIME == 0) {
+		if(movingTimer % PLAYER_MOVE_TIME == 0 && indexOfGameObject != rootPlayerObject) {
+			/*
 			if(backupPosition != NULL) {
 				indexOfGameObject->SetPosition(*backupPosition);
-				delete backupPosition;
-				backupPosition = NULL;
+				//delete backupPosition;
+				//backupPosition = NULL;
 			}
 			else {
 				backupPosition = new Position();
 				backupPosition->SetPosition(indexOfGameObject->GetPosition());
 				indexOfGameObject->SetPosition(previousGameObject->GetPosition());
 			}
-			indexOfGameObject->SetDirection(previousGameObject->GetDirection());
+			if(backupDirection != DIRECTION_NOT_AVAILABLE) {
+				indexOfGameObject->SetDirection(backupDirection);
+				backupDirection = DIRECTION_NOT_AVAILABLE;
+			}
+			else {
+				backupDirection = indexOfGameObject->GetDirection();
+				indexOfGameObject->SetDirection(previousGameObject->GetDirection());
+			}*/
+			indexOfGameObject->SetPosition(indexOfGameObject->GetBeforeGameObject()->GetPosition());
+			indexOfGameObject->SetDirection(indexOfGameObject->GetBeforeGameObject()->GetDirection());
 		}
 		previousGameObject = indexOfGameObject;
-		indexOfGameObject = indexOfGameObject->GetNextGameObject();
+		indexOfGameObject = indexOfGameObject->GetBeforeGameObject();
 		dc.BitBlt(x * 32, y * 32, 32, 32, &memDC, animeFrame * 32, direction * 32, SRCCOPY);
 	}
 }
@@ -136,10 +146,17 @@ void CChildView::Init(CPaintDC &dc) {
 		defaultPosition.SetPosition(5, 6);
 		PlayerObject *testPlayerObject = new PlayerObject(defaultPosition, filePath, DIRECTION_UP);
 		rootPlayerObject->SetNextGameObject(testPlayerObject);
+		testPlayerObject->SetBeforeGameObject(rootPlayerObject);
 
 		defaultPosition.SetPosition(5, 7);
 		PlayerObject *testPlayerObject2 = new PlayerObject(defaultPosition, filePath, DIRECTION_UP);
 		testPlayerObject->SetNextGameObject(testPlayerObject2);
+		testPlayerObject2->SetBeforeGameObject(testPlayerObject);
+
+		defaultPosition.SetPosition(5, 8);
+		PlayerObject *testPlayerObject3 = new PlayerObject(defaultPosition, filePath, DIRECTION_UP);
+		testPlayerObject2->SetNextGameObject(testPlayerObject3);
+		testPlayerObject3->SetBeforeGameObject(testPlayerObject2);
 	}
 }
 

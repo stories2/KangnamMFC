@@ -4,7 +4,7 @@
 
 class GameObject : public Position
 {
-	GameObject *nextGameObject;
+	GameObject *nextGameObject, *beforeGameObject;
 	int direction, animeFrame;
 public:
 	CImage objectImage;
@@ -13,6 +13,8 @@ public:
 	GameObject();
 	void SetNextGameObject(GameObject *gameObject);
 	GameObject *GetNextGameObject();
+	void SetBeforeGameObject(GameObject *gameObject);
+	GameObject *GetBeforeGameObject();
 	void DeleteNextGameObject();
 	void SetDirection(int direction);
 	int GetDirection();

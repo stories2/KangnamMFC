@@ -6,6 +6,7 @@ GameObject::GameObject()
 {
 	Position::SetPosition(ZERO, ZERO);
 	this->nextGameObject = nullptr;
+	this->beforeGameObject = nullptr;
 }
 
 void GameObject::SetNextGameObject(GameObject * gameObject)
@@ -16,6 +17,16 @@ void GameObject::SetNextGameObject(GameObject * gameObject)
 GameObject * GameObject::GetNextGameObject()
 {
 	return this->nextGameObject;
+}
+
+void GameObject::SetBeforeGameObject(GameObject *gameObject) 
+{
+	this->beforeGameObject = gameObject;
+}
+
+GameObject * GameObject::GetBeforeGameObject() 
+{
+	return this->beforeGameObject;
 }
 
 void GameObject::DeleteNextGameObject()
