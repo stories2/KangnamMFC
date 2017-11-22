@@ -81,19 +81,32 @@ void CChildView::RecursiveDraw(CPaintDC &dc) {
 	memDC.SelectObject(&bitmapPlayer);
 	GameObject *indexOfGameObject = rootPlayerObject;
 	GameObject *previousGameObject = NULL;
+	Position *backupPosition = NULL;
+	int cnt = 0;
 	while(indexOfGameObject != NULL) {
 		int x = indexOfGameObject->GetX(), y = indexOfGameObject->GetY(), 
 			direction = indexOfGameObject->GetDirection(), animeFrame = indexOfGameObject->GetAnimeFrame();
-		dc.BitBlt(x * 32, y * 32, 32, 32, &memDC, animeFrame * 32, direction * 32, SRCCOPY);
+		//printf("#%d x: %d y: %d dir: %d\n", cnt, x, y, direction);
+		cnt += 1;
 		if(timer % IMAGE_UPDATE_TIME == 0) {
 			indexOfGameObject->SetAnimeFrame((animeFrame + 1) % 4);
 		}
-		if(previousGameObject != NULL) {
-			indexOfGameObject->SetPosition(previousGameObject->GetPosition());
+		if(previousGameObject != NULL && movingTimer % PLAYER_MOVE_TIME == 0) {
+			if(backupPosition != NULL) {
+				indexOfGameObject->SetPosition(*backupPosition);
+				delete backupPosition;
+				backupPosition = NULL;
+			}
+			else {
+				backupPosition = new Position();
+				backupPosition->SetPosition(indexOfGameObject->GetPosition());
+				indexOfGameObject->SetPosition(previousGameObject->GetPosition());
+			}
 			indexOfGameObject->SetDirection(previousGameObject->GetDirection());
 		}
 		previousGameObject = indexOfGameObject;
 		indexOfGameObject = indexOfGameObject->GetNextGameObject();
+		dc.BitBlt(x * 32, y * 32, 32, 32, &memDC, animeFrame * 32, direction * 32, SRCCOPY);
 	}
 }
 
@@ -112,13 +125,21 @@ void CChildView::Init(CPaintDC &dc) {
 		GetClientRect(&rect);
 
 		Position defaultPosition;
-		defaultPosition.SetPosition(0, 0);
+		defaultPosition.SetPosition(5, 5);
 		CString filePath("res/player.png");
 		rootPlayerObject = new PlayerObject(defaultPosition, filePath, DIRECTION_UP);
 
 		SetTimer(0, 1000 / 60, NULL);
 
 		timer = 0;
+
+		defaultPosition.SetPosition(5, 6);
+		PlayerObject *testPlayerObject = new PlayerObject(defaultPosition, filePath, DIRECTION_UP);
+		rootPlayerObject->SetNextGameObject(testPlayerObject);
+
+		defaultPosition.SetPosition(5, 7);
+		PlayerObject *testPlayerObject2 = new PlayerObject(defaultPosition, filePath, DIRECTION_UP);
+		testPlayerObject->SetNextGameObject(testPlayerObject2);
 	}
 }
 
