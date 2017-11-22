@@ -55,6 +55,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -95,6 +96,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\item.png" />
+    <None Include="res\player.png" />
     <None Include="res\SnakeGame2010.ico" />
     <None Include="res\SnakeGame2010.rc2" />
     <None Include="res\Toolbar.bmp" />
@@ -103,7 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChildView.h" />
+    <ClInclude Include="DefineManager.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="LogManager.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="PlayerObject.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SnakeGame2010.h" />
     <ClInclude Include="stdafx.h" />
@@ -111,7 +120,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChildView.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="LogManager.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="PlayerObject.cpp" />
+    <ClCompile Include="Position.cpp" />
     <ClCompile Include="SnakeGame2010.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

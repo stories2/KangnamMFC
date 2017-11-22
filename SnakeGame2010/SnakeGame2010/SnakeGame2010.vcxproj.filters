@@ -13,6 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="헤더 파일\Controller">
+      <UniqueIdentifier>{f1f29c8c-31ff-419b-991b-6cb85ac41b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Model">
+      <UniqueIdentifier>{24e59dea-0468-433b-85c2-b1df7b5946e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Settings">
+      <UniqueIdentifier>{97646b4b-4313-476c-ad9c-cfcf4b55f842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Utils">
+      <UniqueIdentifier>{d2710148-15c0-41a1-b16e-d361cd3c0615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Controller">
+      <UniqueIdentifier>{ac9aff23-2210-449c-88d0-5794681eda8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Model">
+      <UniqueIdentifier>{80214c5b-3020-4e19-ae4b-e489b8504320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Utils">
+      <UniqueIdentifier>{70da296b-410d-4a09-b4cc-c4af65e6609b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -29,6 +50,15 @@
       <Filter>리소스 파일</Filter>
     </None>
     <None Include="res\Toolbar256.bmp">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\player.png">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\item.png">
       <Filter>리소스 파일</Filter>
     </None>
   </ItemGroup>
@@ -51,6 +81,21 @@
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="LogManager.h">
+      <Filter>헤더 파일\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineManager.h">
+      <Filter>헤더 파일\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerObject.h">
+      <Filter>헤더 파일\Controller</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SnakeGame2010.cpp">
@@ -64,6 +109,18 @@
     </ClCompile>
     <ClCompile Include="ChildView.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LogManager.cpp">
+      <Filter>소스 파일\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerObject.cpp">
+      <Filter>소스 파일\Controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
