@@ -25,6 +25,7 @@ class CChildView : public CWnd
 	CRect rect;
 	CDC memDC;
 	PlayerObject *rootPlayerObject;
+	int timer;
 // 생성입니다.
 public:
 	CChildView();
@@ -49,5 +50,8 @@ public:
 protected:
 	afx_msg void OnPaint();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
 };
 

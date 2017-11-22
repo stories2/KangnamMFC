@@ -25,6 +25,8 @@ CChildView::~CChildView()
 
 BEGIN_MESSAGE_MAP(CChildView, CWnd)
 	ON_WM_PAINT()
+	ON_WM_TIMER()
+	ON_WM_KEYDOWN()
 END_MESSAGE_MAP()
 
 
@@ -66,6 +68,8 @@ void CChildView::OnPaint()
 	dc.BitBlt(32, 32, 32, 32, &memDC, 0, 0, SRCCOPY);
 
 	RecursiveDraw(dc);
+
+	timer += 1;
 }
 
 void CChildView::RecursiveDraw(CPaintDC &dc) {
@@ -75,6 +79,9 @@ void CChildView::RecursiveDraw(CPaintDC &dc) {
 		int x = indexOfGameObject->GetX(), y = indexOfGameObject->GetY(), 
 			direction = indexOfGameObject->GetDirection(), animeFrame = indexOfGameObject->GetAnimeFrame();
 		dc.BitBlt(x * 32, y * 32, 32, 32, &memDC, animeFrame * 32, direction * 32, SRCCOPY);
+		if(timer % 10 == 0) {
+			indexOfGameObject->SetAnimeFrame((animeFrame + 1) % 4);
+		}
 		indexOfGameObject = indexOfGameObject->GetNextGameObject();
 	}
 }
@@ -97,5 +104,41 @@ void CChildView::Init(CPaintDC &dc) {
 		defaultPosition.SetPosition(0, 0);
 		CString filePath("res/player.png");
 		rootPlayerObject = new PlayerObject(defaultPosition, filePath, DIRECTION_UP);
+
+		SetTimer(0, 1000 / 60, NULL);
+
+		timer = 0;
+	}
+}
+
+void CChildView::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+
+	//CWnd::OnTimer(nIDEvent);
+	if(nIDEvent == 0) {
+		Invalidate();
+	}
+}
+
+
+void CChildView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+
+	//CWnd::OnKeyDown(nChar, nRepCnt, nFlags);
+	switch(nChar) {
+	case VK_LEFT:
+		rootPlayerObject->SetDirection(DIRECTION_LEFT);
+		break;
+	case VK_UP:
+		rootPlayerObject->SetDirection(DIRECTION_UP);
+		break;
+	case VK_RIGHT:
+		rootPlayerObject->SetDirection(DIRECTION_RIGHT);
+		break;
+	case VK_DOWN:
+		rootPlayerObject->SetDirection(DIRECTION_DOWN);
+		break;
 	}
 }
