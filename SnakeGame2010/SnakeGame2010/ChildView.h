@@ -25,12 +25,13 @@ class CChildView : public CWnd
 	CRect rect;
 	CDC memDC;
 	PlayerObject *rootPlayerObject;
-	int timer;
+	int timer, movingTimer;
 // 생성입니다.
 public:
 	CChildView();
 	void Init(CPaintDC &dc);
 	void RecursiveDraw(CPaintDC &dc);
+	void RecursiveMove();
 
 // 특성입니다.
 public:

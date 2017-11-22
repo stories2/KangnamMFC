@@ -14,4 +14,7 @@
 #define LOG_LEVEL_WARN 3
 #define LOG_LEVEL_ERROR 4
 
+#define IMAGE_UPDATE_TIME 10
+#define PLAYER_MOVE_TIME 20
+
 #endif // !DEFINE_MANAGER

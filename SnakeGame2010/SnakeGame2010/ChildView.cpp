@@ -69,19 +69,30 @@ void CChildView::OnPaint()
 
 	RecursiveDraw(dc);
 
+	if(movingTimer % PLAYER_MOVE_TIME == 0) {
+		RecursiveMove();
+	}
+
+	movingTimer += 1;
 	timer += 1;
 }
 
 void CChildView::RecursiveDraw(CPaintDC &dc) {
 	memDC.SelectObject(&bitmapPlayer);
 	GameObject *indexOfGameObject = rootPlayerObject;
+	GameObject *previousGameObject = NULL;
 	while(indexOfGameObject != NULL) {
 		int x = indexOfGameObject->GetX(), y = indexOfGameObject->GetY(), 
 			direction = indexOfGameObject->GetDirection(), animeFrame = indexOfGameObject->GetAnimeFrame();
 		dc.BitBlt(x * 32, y * 32, 32, 32, &memDC, animeFrame * 32, direction * 32, SRCCOPY);
-		if(timer % 10 == 0) {
+		if(timer % IMAGE_UPDATE_TIME == 0) {
 			indexOfGameObject->SetAnimeFrame((animeFrame + 1) % 4);
 		}
+		if(previousGameObject != NULL) {
+			indexOfGameObject->SetPosition(previousGameObject->GetPosition());
+			indexOfGameObject->SetDirection(previousGameObject->GetDirection());
+		}
+		previousGameObject = indexOfGameObject;
 		indexOfGameObject = indexOfGameObject->GetNextGameObject();
 	}
 }
@@ -111,6 +122,28 @@ void CChildView::Init(CPaintDC &dc) {
 	}
 }
 
+void CChildView::RecursiveMove() {
+	int direction = rootPlayerObject->GetDirection();
+	int x = rootPlayerObject->GetX(), y = rootPlayerObject->GetY();
+	switch(direction) {
+	case DIRECTION_LEFT:
+		x = x - 1;
+		break;
+	case DIRECTION_UP:
+		y = y - 1;
+		break;
+	case DIRECTION_RIGHT:
+		x = x + 1;
+		break;
+	case DIRECTION_DOWN:
+		y = y + 1;
+		break;
+	}
+	Position position;
+	position.SetPosition(x, y);
+	rootPlayerObject->SetPosition(position);
+}
+
 void CChildView::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
@@ -130,15 +163,19 @@ void CChildView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	switch(nChar) {
 	case VK_LEFT:
 		rootPlayerObject->SetDirection(DIRECTION_LEFT);
+		movingTimer = 0;
 		break;
 	case VK_UP:
 		rootPlayerObject->SetDirection(DIRECTION_UP);
+		movingTimer = 0;
 		break;
 	case VK_RIGHT:
 		rootPlayerObject->SetDirection(DIRECTION_RIGHT);
+		movingTimer = 0;
 		break;
 	case VK_DOWN:
 		rootPlayerObject->SetDirection(DIRECTION_DOWN);
+		movingTimer = 0;
 		break;
 	}
 }
