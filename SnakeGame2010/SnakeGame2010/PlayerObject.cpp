@@ -6,7 +6,7 @@
 PlayerObject::PlayerObject(Position playerPosition, CString resourcePath, int direction)
 {
 	Position::SetPosition(playerPosition);
-	CImage playerImage;
+	/*CImage playerImage;
 	playerImage.Load(resourcePath);
 	if (playerImage != NULL) {
 		LogManager::PrintMessage(CString("PlayerObject"), CString("PlayerObject"), CString("image loaded successfully: ") + resourcePath, LOG_LEVEL_INFO);
@@ -14,7 +14,7 @@ PlayerObject::PlayerObject(Position playerPosition, CString resourcePath, int di
 	else {
 		LogManager::PrintMessage(CString("PlayerObject"), CString("PlayerObject"), CString("the image is wrong"), LOG_LEVEL_WARN);
 	}
-	GameObject::SetImage(playerImage);
+	GameObject::SetImage(playerImage);*/
 	GameObject::SetDirection(direction);
 	GameObject::SetAnimeFrame(ZERO);
 }
@@ -83,7 +83,7 @@ int PlayerObject::GetAnimeFrame()
 
 void PlayerObject::Draw(CPaintDC &cPaintDc, CRect &rect, CDC &memDC)
 {
-	GameObject::Draw(cPaintDc, rect, memDC);
+	//GameObject::Draw(cPaintDc, rect, memDC);
 }
 PlayerObject::~PlayerObject()
 {

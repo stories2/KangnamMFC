@@ -11,6 +11,7 @@
 
 #include "PlayerObject.h"
 #include "LogManager.h"
+#include <random>
 
 #endif
 
@@ -20,18 +21,24 @@
 
 class CChildView : public CWnd
 {
-	bool resetFlag;
+	bool resetFlag, isGameOver, hardResetFlag;
 	CBitmap bitmapPlayer, bitmapItem;	
 	CRect rect;
 	CDC memDC;
 	PlayerObject *rootPlayerObject;
+	GameObject *itemObject;
 	int timer, movingTimer;
+	Position viewPosition;
 // 생성입니다.
 public:
 	CChildView();
 	void Init(CPaintDC &dc);
 	void RecursiveDraw(CPaintDC &dc);
 	void RecursiveMove();
+	void ItemDraw(CPaintDC &dc);
+	void BackgroundDraw(CPaintDC &dc);
+	void GameRuleManager();
+	int GetRandomInt(int nMin, int nMax);
 
 // 특성입니다.
 public:
@@ -54,5 +61,6 @@ protected:
 public:
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 };
 
