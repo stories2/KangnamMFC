@@ -14,6 +14,7 @@ class CChildView : public CWnd
 public:
 	CChildView();
 	CButton testButton;
+	CButton checkButton;
 // 특성입니다.
 public:
 
@@ -34,5 +35,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	afx_msg void OnButtonClicked();
 };
 

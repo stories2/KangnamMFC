@@ -25,6 +25,8 @@ CChildView::~CChildView()
 BEGIN_MESSAGE_MAP(CChildView, CWnd)
 	ON_WM_PAINT()
 	ON_WM_CREATE()
+	ON_BN_CLICKED(101, OnButtonClicked)
+	ON_BN_CLICKED(102, OnButtonClicked)
 END_MESSAGE_MAP()
 
 
@@ -62,5 +64,16 @@ int CChildView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	// TODO:  여기에 특수화된 작성 코드를 추가합니다.
 	testButton.Create(L"Press me", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, CRect(100, 100, 200, 130), this, 101);
+
+	checkButton.Create(L"체크 박스", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
+                                CRect(20, 60, 160, 90), this, 102);
+	checkButton.SetCheck(false);
 	return 0;
+}
+
+void CChildView::OnButtonClicked() {
+	bool checkStatus = checkButton.GetCheck() == BST_CHECKED ? true : false;
+	if(checkStatus) {
+		MessageBox(L"You pressed button");
+	}
 }
