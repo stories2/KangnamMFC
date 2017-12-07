@@ -24,6 +24,8 @@ SampleDialog::~SampleDialog()
 void SampleDialog::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_EDIT1, etxtView);
+	DDX_Control(pDX, IDC_RADIO1, radioColor);
 }
 
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "afxwin.h"
 
 
 // SampleDialog 대화 상자입니다.
@@ -18,4 +19,7 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
 
 	DECLARE_MESSAGE_MAP()
+public:
+	CEdit etxtView;
+	CButton radioColor;
 };
